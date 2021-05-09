@@ -1,5 +1,10 @@
 {{#each this}}
-<div class="photo-card list-card">
-    <h2>{{name}}</h2>
-</div>
+<li class="event-card">
+    <h3 class="event-title">{{name}}</h3>
+    <img class="event-image" src={{this.images.0.url}} alt="{{name}}" width="320" />
+    <p class="event-date">{{dates.start.localDate}}</p>
+    <p class="event-place"><span class="material-icons">
+            room
+        </span>Place</p>
+</li>
 {{/each}}

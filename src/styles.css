@@ -14,10 +14,16 @@ a:active {
   text-decoration: none;
   color: inherit;
 }
+p,
+h1,
+h2,
+h3 {
+  color: #fff;
+}
 
 body {
   margin: 0;
-  background-color: rgb(241, 228, 228);
+  background-color: rgb(26, 24, 24);
 }
 
 .search-input {
@@ -113,8 +119,13 @@ ul {
 #dataContainer {
   margin-top: 30px;
   text-align: center;
+  display: flex;
+  justify-content: center;
 }
 
+.event-card {
+  margin-right: 25px;
+}
 li {
   list-style: none;
 }

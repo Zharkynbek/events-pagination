@@ -15,7 +15,7 @@ class NewApiService {
       dataSource: function (done) {
         $.ajax({
           type: 'GET',
-          url: `https://app.ticketmaster.com/discovery/v2/events.json?countryCode=${query}&apikey=k4ZuaibW7VaW2DqWiJtNRmwq3dAdRpv6`,
+          url: `https://app.ticketmaster.com/discovery/v2/events.json?apikey=k4ZuaibW7VaW2DqWiJtNRmwq3dAdRpv6`,
           success: function (data) {
             console.log(data);
             if ('_embedded' in data) {
@@ -24,7 +24,7 @@ class NewApiService {
           },
         });
       },
-      pageSize: 6,
+      pageSize: 5,
       showPrevious: false,
       showNext: false,
       callback: function (data) {
