@@ -1,14 +1,3 @@
-import refs from './js/refs';
-import './styles.css';
-import * as basicLightbox from 'basiclightbox';
-import './basicLightBox.min.css';
-import tmpl from './templates/tmpl.hbs';
-import { error } from '@pnotify/core';
-import '@pnotify/core/dist/PNotify.css';
-import '@pnotify/core/dist/BrightTheme.css';
-// import $ from 'jquery';
-import pagination from 'paginationjs';
-
 class NewApiService {
   static getData(query) {
     $('#demo').pagination({
