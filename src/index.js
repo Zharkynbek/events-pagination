@@ -1,4 +1,4 @@
-import refs from './js/refs';
+// import refs from './js/refs';
 import './styles.css';
 import * as basicLightbox from 'basiclightbox';
 import './basicLightBox.min.css';
@@ -9,17 +9,25 @@ import '@pnotify/core/dist/BrightTheme.css';
 // import $ from 'jquery';
 import pagination from 'paginationjs';
 
+const refs = {
+  searchForm: document.querySelector('.search-form'),
+  searchInput: document.querySelector('.search-input'),
+  select: document.querySelector('.select'),
+  eventsList: document.querySelector('.events-list'),
+  container: document.querySelector('.container'),
+};
+
 class NewApiService {
-  static getData(query) {
+  static getData() {
     $('#demo').pagination({
       dataSource: function (done) {
         $.ajax({
           type: 'GET',
-          url: `https://app.ticketmaster.com/discovery/v2/events.json?apikey=k4ZuaibW7VaW2DqWiJtNRmwq3dAdRpv6`,
-          success: function (data) {
-            console.log(data);
-            if ('_embedded' in data) {
-              done(data._embedded.events);
+          url: `https://app.ticketmaster.com/discovery/v2/events.json?keyword=${refs.searchInput.value}&countryCode=${refs.select.value}&apikey=k4ZuaibW7VaW2DqWiJtNRmwq3dAdRpv6`,
+          success: function (response) {
+            console.log(response);
+            if ('_embedded' in response) {
+              done(response._embedded.events);
             }
           },
         });
@@ -35,4 +43,9 @@ class NewApiService {
   }
 }
 
-NewApiService.getData('US');
+function onSubmit(e) {
+  e.preventDefault();
+  NewApiService.getData();
+}
+
+refs.searchForm.addEventListener('submit', onSubmit);

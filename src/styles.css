@@ -23,7 +23,7 @@ h3 {
 
 body {
   margin: 0;
-  background-color: rgb(26, 24, 24);
+  background-color: rgb(155, 122, 122);
 }
 
 .search-input {
@@ -128,4 +128,9 @@ ul {
 }
 li {
   list-style: none;
+}
+
+.select {
+  width: 300px;
+  height: 40px;
 }

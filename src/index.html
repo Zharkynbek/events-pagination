@@ -12,15 +12,31 @@
 
   <!-- =============== Form ======================== -->
 
-    <form class="search-form" id="search-form">
+    <!-- <form class="search-form" id="search-form">
       <input type="text" name="query" autocomplete="off" placeholder="search events..." class="search-input" />
       <button class="btn">Search</button>
-    </form>
+    </form> -->
+<div class="container">
+  <form action="submit" class="search-form">
+    <label>
+      <p>search events</p>
+      <input type="text" class="search-input">
+    </label>
+    <label>
+      <p>search country</p>
+      <select class="select"></select>
+    </label>
+  </form>
+  <ul class="events-list"></ul>
+  <div id="dataContainer"></div>
+  <div id="demo"></div>
+</div>
+
 
   <!-- ============== Image List ========== -->
 
-    <div id="dataContainer"></div>
-    <div id="demo"></div>
+    <!-- <div id="dataContainer"></div>
+    <div id="demo"></div> -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   </body>
 
